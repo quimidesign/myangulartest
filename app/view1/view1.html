@@ -1,5 +1,20 @@
 <p>This is the partial for view 1.</p>
 <p>I'll try to provide some data from the View1Ctrl:</p>
-	<ul>
-		<li>{{myFirstVar}}</li>
-	</ul>
+<ul>
+	<li>First Tag: {{myFirstVar}}</li>
+	<li>First Array: {{myFirstArray[1].name}}</li>
+	<li>Second Array: {{myFirstArray[0].stars[2]}}</li>
+</ul>
+<p>Iterar todos los elementos del Array</p>
+<div class="array" ng-repeat="item in myFirstArray">
+	<li>{{item.name + '/' + item.age + '/' + item.stars}}</li>
+</div>
+Total Items = {{myFirstArray.length}}
+<p>Recoger datos desde un formulario y subirlos al array</p>
+<form novalidate class="myForm">
+	<input type="text" ng-model="newitem.name" placeholder="name" required>
+	<input type="text" ng-model="newitem.age" placeholder="age" required>
+	<input type="text" ng-model="newitem.stars" placeholder="stars" required>
+	<button ng-click="itemAdd(newitem)">Add</button>
+</form>
+{{userText}}
